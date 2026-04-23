@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top, #1a0033, #000);
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: url("https://www.transparenttextures.com/patterns/stardust.png");
+    opacity: 0.4;
+    animation: estrelas 80s linear infinite;
+}
+
+@keyframes estrelas {
+    from { transform: translate(0,0); }
+    to { transform: translate(-600px, -600px); }
+}
+
+.container {
+    position: relative;
+    width: 750px;
+    height: 420px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    backdrop-filter: blur(10px);
+}
+
+.forms {
+    display: flex;
+    width: 200%;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.form {
+    width: 50%;
+    height: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.form input {
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    transition: 0.3s;
+}
+
+.form input:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 8px #a855f7;
+}
+
+.form button {
+    margin-top: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #7a00ff, #c084fc);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form button:hover {
+    transform: translateY(-2px);
+}
+
+.form button:active {
+    transform: scale(0.96);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, #7a00ff, #c084fc);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+    z-index: 2;
+}
+
+.overlay-content {
+    text-align: center;
+}
+
+.overlay button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #7a00ff;
+    cursor: pointer;
+}
+
+.container.active .forms {
+    transform: translateX(-50%);
+}
+
+.container.active .overlay {
+    transform: translateX(100%) scale(1.02);
+}
+
+.forms,
+.overlay {
+    will-change: transform;
+}
