@@ -1,22 +1,29 @@
-const container = document.getElementById("container");
-const botao = document.getElementById("trocar");
-const titulo = document.getElementById("titulo");
-const texto = document.getElementById("texto");
+const btnLogin = document.getElementById("btnLogin");
+const btnCadastro = document.getElementById("btnCadastro");
 
-let ativo = false;
+const formLogin = document.querySelector(".login");
+const formCadastro = document.querySelector(".cadastro");
 
-botao.addEventListener("click", () => {
-    ativo = !ativo;
+const tabs = document.querySelector(".tabs");
 
-    container.classList.toggle("active");
+tabs.style.setProperty("--pos", "0%");
 
-    if (ativo) {
-        titulo.textContent = "Bem-vindo!";
-        texto.textContent = "Já tem conta?";
-        botao.textContent = "Entrar";
-    } else {
-        titulo.textContent = "Olá!";
-        texto.textContent = "Não tem conta?";
-        botao.textContent = "Cadastrar";
-    }
-});
+btnLogin.onclick = () => {
+    formLogin.classList.add("active");
+    formCadastro.classList.remove("active");
+
+    btnLogin.classList.add("active");
+    btnCadastro.classList.remove("active");
+
+    tabs.style.setProperty("--pos", "0%");
+};
+
+btnCadastro.onclick = () => {
+    formCadastro.classList.add("active");
+    formLogin.classList.remove("active");
+
+    btnCadastro.classList.add("active");
+    btnLogin.classList.remove("active");
+
+    tabs.style.setProperty("--pos", "100%");
+};
