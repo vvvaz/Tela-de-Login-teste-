@@ -10,12 +10,13 @@ botao.addEventListener("click", () => {
 
     container.classList.toggle("active");
 
-   if (ativo) {
-    titulo.textContent = "Bem-vindo de volta!";
-    texto.textContent = "Já tem conta?";
-    botao.textContent = "Login";
-} else {
-    titulo.textContent = "Olá!";
-    texto.textContent = "Não tem conta?";
-    botao.textContent = "Cadastrar";
-}
+    if (ativo) {
+        titulo.textContent = "Bem-vindo!";
+        texto.textContent = "Já tem conta?";
+        botao.textContent = "Entrar";
+    } else {
+        titulo.textContent = "Olá!";
+        texto.textContent = "Não tem conta?";
+        botao.textContent = "Cadastrar";
+    }
+});
