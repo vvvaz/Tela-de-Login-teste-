@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Login</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container" id="container">
+<div class="container">
 
-    <div class="forms">
-        
-        <div class="form login">
-            <h2>Login</h2>
-            <input type="text" placeholder="Usuário">
-            <input type="password" placeholder="Senha">
-            <button>Entrar</button>
-        </div>
-
-        <div class="form cadastro">
-            <h2>Login</h2>
-            <input type="text" placeholder="Usuário">
-            <input type="password" placeholder="Senha">
-            <button>Cadastrar</button>
-        </div>
+    <div class="tabs">
+        <button id="btnLogin" class="active">Login</button>
+        <button id="btnCadastro">Cadastro</button>
     </div>
 
-    <div class="overlay">
-        <div class="overlay-content">
-            <h2 id="titulo">Olá!</h2>
-            <p id="texto">Não tem conta?</p>
-            <button id="trocar">Cadastrar</button>
-        </div>
+    <div class="form login active">
+        <h2>Login</h2>
+        <input type="text" placeholder="Usuário">
+        <input type="password" placeholder="Senha">
+        <button>Entrar</button>
+    </div>
+
+    <div class="form cadastro">
+        <h2>Cadastro</h2>
+        <input type="text" placeholder="Usuário">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Senha">
+        <input type="password" placeholder="Confirmar senha">
+        <button>Cadastrar</button>
     </div>
 
 </div>
